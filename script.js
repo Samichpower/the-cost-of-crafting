@@ -10,7 +10,6 @@ function formatArraysToObject(itemsList, ingredientsList) {
       recipe: ingredientsList
     }
   }
-
   const masterList = [];
   for (let i = 0; i < itemsList.length; i++) {
     masterList.push(itemToObject(itemsList[i], ingredientsList[i]));
@@ -19,27 +18,40 @@ function formatArraysToObject(itemsList, ingredientsList) {
 }
 
 const tierOneMasterList = formatArraysToObject(tierOneItems, tierOneIngredients);
+const tierTwoMasterList = formatArraysToObject(tierOneItems, tierOneIngredients);
+const tierThreeMasterList = formatArraysToObject(tierOneItems, tierOneIngredients);
+const tierFourMasterList = formatArraysToObject(tierOneItems, tierOneIngredients);
 
-function getRandomItem(masterList) {
-  const randNum = Math.floor(Math.random() * masterList.length);
-  return masterList[randNum];
-}
+const tierOneContainer = document.querySelector('.tier-one-items');
+const tierTwoContainer = document.querySelector('.tier-two-items');
+const tierThreeContainer = document.querySelector('.tier-three-items');
+const tierFourContainer = document.querySelector('.tier-four-items');
 
+const getNewGameButton = document.querySelector('.new-list-btn');
+getNewGameButton.addEventListener('click', generateGame);
 
-const chosenItems = [];
+function generateGame() {
+  function getRandomItem(masterList) {
+    const randNum = Math.floor(Math.random() * masterList.length);
+    return masterList[randNum];
+  }
 
-function getTierItems(masterList) {
-  for (let i = 0; i < 2;) {
-    let randItem = getRandomItem(masterList);
-    if (chosenItems[chosenItems.length - 1] != randItem) {
-      chosenItems.push(randItem);
-      i++;
+  const activeGameItems = [];
+  function getTierItems(masterList) {
+    for (let i = 0; i < 2;) {
+      let randItem = getRandomItem(masterList);
+      if (activeGameItems[activeGameItems.length - 1] != randItem) {
+        activeGameItems.push(randItem);
+        i++;
+      }
     }
   }
-}
-getTierItems(tierOneMasterList);
-getTierItems(tierOneMasterList);
-getTierItems(tierOneMasterList);
-getTierItems(tierOneMasterList);
 
-console.log(chosenItems);
+  getTierItems(tierOneMasterList);
+  getTierItems(tierTwoMasterList);
+  getTierItems(tierThreeMasterList);
+  getTierItems(tierFourMasterList);
+  console.log(activeGameItems);
+}
+
+// generateGame();
