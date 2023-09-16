@@ -60,6 +60,12 @@ function generateGame() {
     for (let i = 0; i < activeGameItems.length; i++) {
       if (i === 0 || i === 1) {
         tierOneContainer.innerHTML += formatItem(activeGameItems[i], 'itemName', 'recipe');
+      } else if (i === 2 || i === 3) {
+        tierTwoContainer.innerHTML += formatItem(activeGameItems[i], 'itemName', 'recipe');
+      } else if (i === 4 || i === 5) {
+        tierThreeContainer.innerHTML += formatItem(activeGameItems[i], 'itemName', 'recipe');
+      } else if (i === 6 || i === 7) {
+        tierFourContainer.innerHTML += formatItem(activeGameItems[i], 'itemName', 'recipe');
       }
     }
   }
