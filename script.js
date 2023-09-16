@@ -2,7 +2,6 @@ const tierOneItems = ['Crafting Table', 'Iron Sword', 'Oak Stairs', 'Muddy Mangr
 
 const tierOneIngredients = ['4 Planks', '2 Iron, 1 Stick', '6 Oak Planks', '1 Mud, 1 Mangrove Roots', '5 Iron Ingots, 1 Chest', '1 Candle, Brown Dye', '9 Gold Nuggets', '5 Iron Ingots', '1 Bonemeal', '3 Wheat', '8 Diamonds', '3 Wood Planks', '7 Wood Slabs', '1 Stick, 1 Coal', '1 Birch Planks', '8 Wood Planks', '8 Cobblestone', '3 Paper, 1 Leather', '4 String', '8 Iron Nuggets, 1 Torch', '2 Iron Nuggets, 1 Iron Ingot', '2 Stone', '6 Stone Bricks', '1 Carved Pumpkin, 1 Torch', '9 Dried Kelp', '4 Clay', '3 Clay', '3 Sticks, 3 String', '3 Sticks, 2 String', '7 Iron Ingots', '3 Copper Ingots', '4 Gold Ingots, 1 Redstone Dust', '4 Stone'];
 
-
 function formatArraysToObject(itemsList, ingredientsList) {
   function itemToObject(itemsList, ingredientsList) {
     return {
@@ -16,6 +15,8 @@ function formatArraysToObject(itemsList, ingredientsList) {
   }
   return masterList;
 }
+
+
 
 const tierOneMasterList = formatArraysToObject(tierOneItems, tierOneIngredients);
 const tierTwoMasterList = formatArraysToObject(tierOneItems, tierOneIngredients);
@@ -31,6 +32,11 @@ const getNewGameButton = document.querySelector('.new-list-btn');
 getNewGameButton.addEventListener('click', generateGame);
 
 function generateGame() {
+  tierOneContainer.innerHTML = '';
+  tierTwoContainer.innerHTML = '';
+  tierThreeContainer.innerHTML = '';
+  tierFourContainer.innerHTML = '';
+
   function getRandomItem(masterList) {
     const randNum = Math.floor(Math.random() * masterList.length);
     return masterList[randNum];
@@ -52,6 +58,17 @@ function generateGame() {
   getTierItems(tierThreeMasterList);
   getTierItems(tierFourMasterList);
   console.log(activeGameItems);
-}
 
-// generateGame();
+  function appendItems() {
+    function formatItem(item, itemName, recipe) {
+      return `<p>${item[itemName]}</p><ul><li>${item[recipe]}</li></ul>`
+    }
+    
+    for (let i = 0; i < activeGameItems.length; i++) {
+      if (i === 0 || i === 1) {
+        tierOneContainer.innerHTML += formatItem(activeGameItems[i], 'itemName', 'recipe');
+      }
+    }
+  }
+  appendItems();
+}
