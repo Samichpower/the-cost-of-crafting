@@ -54,19 +54,24 @@ function generateGame() {
   console.log(activeGameItems);
 
   function appendItems() {
-    function formatItem(item, itemName, recipe) {
-      return `<div class="item-container"><p>${item[itemName]}</p><ul><li>${item[recipe]}</li></ul></div>`
+    function formatItems(item, itemName, recipe) {
+      let bulletedRecipe = '';
+      const recipeArray = item[recipe].split(', ');
+      for (let i = 0; i < recipeArray.length; i++) {
+        bulletedRecipe += `<li>${recipeArray[i]}</li>`
+      }
+      return `<div class="item-container"><p>${item[itemName]}</p><ul>${bulletedRecipe}</ul></div>`
     }
 
     for (let i = 0; i < activeGameItems.length; i++) {
       if (i === 0 || i === 1) {
-        tierOneContainer.innerHTML += formatItem(activeGameItems[i], 'itemName', 'recipe');
+        tierOneContainer.innerHTML += formatItems(activeGameItems[i], 'itemName', 'recipe');
       } else if (i === 2 || i === 3) {
-        tierTwoContainer.innerHTML += formatItem(activeGameItems[i], 'itemName', 'recipe');
+        tierTwoContainer.innerHTML += formatItems(activeGameItems[i], 'itemName', 'recipe');
       } else if (i === 4 || i === 5) {
-        tierThreeContainer.innerHTML += formatItem(activeGameItems[i], 'itemName', 'recipe');
+        tierThreeContainer.innerHTML += formatItems(activeGameItems[i], 'itemName', 'recipe');
       } else if (i === 6 || i === 7) {
-        tierFourContainer.innerHTML += formatItem(activeGameItems[i], 'itemName', 'recipe');
+        tierFourContainer.innerHTML += formatItems(activeGameItems[i], 'itemName', 'recipe');
       }
     }
   }
