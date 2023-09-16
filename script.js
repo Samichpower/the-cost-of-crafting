@@ -31,8 +31,6 @@ function generateGame() {
   tierThreeContainer.innerHTML = '';
   tierFourContainer.innerHTML = '';
 
-  const activeGameItems = [];
-
   function getTierItems(masterList) {
     function getRandomItem(masterList) {
       const randNum = Math.floor(Math.random() * masterList.length);
@@ -46,6 +44,8 @@ function generateGame() {
       }
     }
   }
+  
+  const activeGameItems = [];
 
   getTierItems(tierOneMasterList);
   getTierItems(tierTwoMasterList);
@@ -57,10 +57,11 @@ function generateGame() {
     function formatItems(item, itemName, recipe) {
       let bulletedRecipe = '';
       const recipeArray = item[recipe].split(', ');
+
       for (let i = 0; i < recipeArray.length; i++) {
         bulletedRecipe += `<li>${recipeArray[i]}</li>`
       }
-      return `<div class="item-container"><p>${item[itemName]}</p><ul>${bulletedRecipe}</ul></div>`
+      return `<div class="item-container"><p>${item[itemName]}</p><ul>${bulletedRecipe}</ul></div>`;
     }
 
     for (let i = 0; i < activeGameItems.length; i++) {
