@@ -6,7 +6,7 @@ const tierOneIngredients = ['4 Planks', '2 Iron, 1 Stick', '6 Oak Planks', '1 Mu
 function formatArraysToObject(itemsList, ingredientsList) {
   function itemToObject(itemsList, ingredientsList) {
     return {
-      item: itemsList,
+      itemName: itemsList,
       recipe: ingredientsList
     }
   }
@@ -37,6 +37,9 @@ function getTierItems(masterList) {
     }
   }
 }
+getTierItems(tierOneMasterList);
+getTierItems(tierOneMasterList);
+getTierItems(tierOneMasterList);
 getTierItems(tierOneMasterList);
 
 console.log(chosenItems);
