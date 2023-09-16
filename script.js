@@ -1,22 +1,3 @@
-function formatArraysToObject(itemsList, ingredientsList) {
-  function itemToObject(itemsList, ingredientsList) {
-    return {
-      itemName: itemsList,
-      recipe: ingredientsList
-    }
-  }
-  const masterList = [];
-  for (let i = 0; i < itemsList.length; i++) {
-    masterList.push(itemToObject(itemsList[i], ingredientsList[i]));
-  }
-  return masterList;
-}
-
-const tierOneMasterList = formatArraysToObject(tierOneItems, tierOneIngredients);
-const tierTwoMasterList = formatArraysToObject(tierTwoItems, tierTwoIngredients);
-const tierThreeMasterList = formatArraysToObject(tierThreeItems, tierThreeIngredients);
-const tierFourMasterList = formatArraysToObject(tierFourItems, tierFourIngredients);
-
 const getNewGameButton = document.querySelector('.new-list-btn');
 getNewGameButton.addEventListener('click', generateGame);
 
@@ -25,13 +6,33 @@ function generateGame() {
   const tierTwoContainer = document.querySelector('.tier-two-items');
   const tierThreeContainer = document.querySelector('.tier-three-items');
   const tierFourContainer = document.querySelector('.tier-four-items');
-
+  
   tierOneContainer.innerHTML = '';
   tierTwoContainer.innerHTML = '';
   tierThreeContainer.innerHTML = '';
   tierFourContainer.innerHTML = '';
 
+  function formatArraysToObject(itemsList, ingredientsList) {
+    function itemToObject(itemsList, ingredientsList) {
+      return {
+        itemName: itemsList,
+        recipe: ingredientsList
+      }
+    }
+    const masterList = [];
+    for (let i = 0; i < itemsList.length; i++) {
+      masterList.push(itemToObject(itemsList[i], ingredientsList[i]));
+    }
+    return masterList;
+  }
+  
+  const tierOneMasterList = formatArraysToObject(tierOneItems, tierOneIngredients);
+  const tierTwoMasterList = formatArraysToObject(tierTwoItems, tierTwoIngredients);
+  const tierThreeMasterList = formatArraysToObject(tierThreeItems, tierThreeIngredients);
+  const tierFourMasterList = formatArraysToObject(tierFourItems, tierFourIngredients);
+
   const activeGameItems = [];
+
   function getTierItems(masterList) {
     function getRandomItem(masterList) {
       const randNum = Math.floor(Math.random() * masterList.length);
