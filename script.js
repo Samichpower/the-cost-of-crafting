@@ -51,7 +51,6 @@ function generateGame() {
   getTierItems(tierTwoMasterList);
   getTierItems(tierThreeMasterList);
   getTierItems(tierFourMasterList);
-  console.log(activeGameItems);
 
   function appendItems() {
     function formatItems(item, itemName, recipe) {
