@@ -1,7 +1,11 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+body {
+  background-color: #EEEEEE;
 }
 
 .flex-container {
@@ -9,6 +13,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+h1, h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h1 {
@@ -23,6 +31,7 @@ h2 {
 
 button {
   padding: 7px;
+  font-weight: bold;
 }
 
 .main-container {
@@ -49,7 +58,13 @@ button {
   min-width: 400px;
 }
 
-.tier-one-container { background-color: #E2EFDA; }
+.tier-one-container {
+  background-color: #E2EFDA;
+  border-radius: 10px 10px 0px 0px;
+}
 .tier-two-container { background-color: #FFF2CC; }
 .tier-three-container { background-color: #FCE4D6; }
-.tier-four-container { background-color: #FFA7A7; }
+.tier-four-container {
+  background-color: #FFA7A7;
+  border-radius: 0px 0px 10px 10px;
+}
