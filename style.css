@@ -15,6 +15,14 @@ body {
   flex-direction: column;
 }
 
+.item-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-top: 1px solid black;
+  padding: 8px 0px 8px 8px;
+}
+
 h1, h2 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -38,14 +46,6 @@ button {
 .main-container {
   display: flex;
   flex-direction: column;
-}
-
-.item-container {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  border-top: 1px solid black;
-  padding: 8px 0px 8px 8px;
 }
 
 .item-container p {
