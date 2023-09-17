@@ -53,18 +53,21 @@ button {
   text-align: center;
 }
 
-
 .tier {
   border: 2px solid grey;
   min-width: 400px;
 }
 
+
+
 .tier-one-container {
   background-color: #E2EFDA;
   border-radius: 10px 10px 0px 0px;
 }
+
 .tier-two-container { background-color: #FFF2CC; }
 .tier-three-container { background-color: #FCE4D6; }
+
 .tier-four-container {
   background-color: #FFA7A7;
   border-radius: 0px 0px 10px 10px;
