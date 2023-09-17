@@ -21,8 +21,9 @@ h1, h2 {
 
 h1 {
   text-align: center;
-  padding: 10px;
-  margin-bottom: 75px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-decoration: underline;
 }
 
 h2 {
