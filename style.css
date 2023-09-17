@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -19,9 +20,31 @@ body {
   display: flex;
   align-items: center;
   gap: 25px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .item-container p {
   width: 150px;
+}
+
+
+
+.tier {
+  border: 2px solid grey;
+}
+
+.tier-one-container {
+  background-color: #E2EFDA;
+}
+
+.tier-two-container {
+  background-color: #FFF2CC;
+}
+
+.tier-three-container {
+  background-color: #FCE4D6;
+}
+
+.tier-four-container {
+  background-color: #FFA7A7;
 }
