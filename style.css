@@ -15,6 +15,11 @@ body {
   flex-direction: column;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .item-container {
   display: flex;
   align-items: center;
@@ -54,11 +59,6 @@ button:hover {
 button:active {
   border: 1px solid rgb(172, 172, 172);
   background-color: rgb(214, 214, 214);
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
 }
 
 .item-container p {
