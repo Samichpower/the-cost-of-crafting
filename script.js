@@ -60,7 +60,7 @@ function generateGame() {
       for (let i = 0; i < recipeArray.length; i++) {
         bulletedRecipe += `<li>${recipeArray[i]}</li>`
       }
-      return `<div class="item-container"><p>${item[itemName]}</p><ul>${bulletedRecipe}</ul></div>`;
+      return `<div class="item-container"><p>${item[itemName]}</p><ul class="ingredients">${bulletedRecipe}</ul></div>`;
     }
 
     for (let i = 0; i < activeGameItems.length; i++) {
