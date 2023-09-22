@@ -93,14 +93,15 @@ button:active {
 
 .bottom-container h2 {
   text-decoration: underline;
+  margin-bottom: 10px;
 }
 
 .rules-container {
   display: flex;
-  gap: 25px;
+  justify-content: center;
+  gap: 50px;
 }
 
 .rules-container div {
-  box-sizing: border-box;
-  width: 50%;
+  max-width: 550px;
 }
