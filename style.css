@@ -11,13 +11,12 @@ body {
 .flex-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
+  margin-right: calc(50% - 200px);
 }
 
 .item-container {
@@ -75,7 +74,6 @@ ul {
   width: 50%;
 }
 
-
 .tier-one-container {
   background-color: #E2EFDA;
   border-radius: 10px 10px 0px 0px;
@@ -87,4 +85,8 @@ ul {
 .tier-four-container {
   background-color: #FFA7A7;
   border-radius: 0px 0px 10px 10px;
+}
+
+.rules-container {
+  width: 400px;
 }
