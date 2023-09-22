@@ -1,3 +1,14 @@
+const tierOneMasterList = formatArraysToObject(tierOneItems, tierOneIngredients);
+const tierTwoMasterList = formatArraysToObject(tierTwoItems, tierTwoIngredients);
+const tierThreeMasterList = formatArraysToObject(tierThreeItems, tierThreeIngredients);
+const tierFourMasterList = formatArraysToObject(tierFourItems, tierFourIngredients);
+const getNewGameButton = document.querySelector('.new-list-btn');
+
+const tierOneContainer = document.querySelector('.tier-one-items');
+const tierTwoContainer = document.querySelector('.tier-two-items');
+const tierThreeContainer = document.querySelector('.tier-three-items');
+const tierFourContainer = document.querySelector('.tier-four-items');
+
 function formatArraysToObject(itemsList, ingredientsList) {
   function itemToObject(itemsList, ingredientsList) {
     return {
@@ -12,24 +23,13 @@ function formatArraysToObject(itemsList, ingredientsList) {
   return masterList;
 }
 
-const tierOneMasterList = formatArraysToObject(tierOneItems, tierOneIngredients);
-const tierTwoMasterList = formatArraysToObject(tierTwoItems, tierTwoIngredients);
-const tierThreeMasterList = formatArraysToObject(tierThreeItems, tierThreeIngredients);
-const tierFourMasterList = formatArraysToObject(tierFourItems, tierFourIngredients);
-
-const getNewGameButton = document.querySelector('.new-list-btn');
-getNewGameButton.addEventListener('click', generateGame);
-
 function generateGame() {
-  const tierOneContainer = document.querySelector('.tier-one-items');
-  const tierTwoContainer = document.querySelector('.tier-two-items');
-  const tierThreeContainer = document.querySelector('.tier-three-items');
-  const tierFourContainer = document.querySelector('.tier-four-items');
-  
   tierOneContainer.innerHTML = '';
   tierTwoContainer.innerHTML = '';
   tierThreeContainer.innerHTML = '';
   tierFourContainer.innerHTML = '';
+
+  const activeGameItems = [];
 
   function getTierItems(masterList) {
     function getRandomItem(masterList) {
@@ -44,8 +44,6 @@ function generateGame() {
       }
     }
   }
-  
-  const activeGameItems = [];
 
   getTierItems(tierOneMasterList);
   getTierItems(tierTwoMasterList);
@@ -77,3 +75,5 @@ function generateGame() {
   }
   appendItems();
 }
+
+getNewGameButton.addEventListener('click', generateGame);
